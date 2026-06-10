@@ -20,7 +20,7 @@ func main() {
 	router.Use(middleware.LoggerMiddleware()) // Add custom middleware to log request details
 	router.Use(middleware.CorsMiddleware()) // Add custom middleware to handle CORS
 
-	routes.Register(router)
+	routes.Register(router,cfg) // Register all routes with the router
 
 	
 	log.Println("api-gateway listening on " + cfg.Port)
